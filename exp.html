@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Design</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f6fc;
+        }
+
+        header {
+            background-color: #234c75;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 15px;
+            background-color: white;
+        }
+
+        img {
+            width: 300px;
+            height: 180px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #d5e6f5;
+        }
+
+        footer {
+            background-color: #234c75;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Webpage</h1>
+        <p>Learning HTML5 Web Design</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>HTML stands for
+            <span style="color:blue;">Hypertext Markup Language</span>.
+            It is used to create web pages.
+        </p>
+
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+             alt="Computer and Web Development">
+
+        <p>Visit
+            <a href="https://www.w3schools.com/"
+               target="_blank">W3Schools</a>
+            to learn HTML.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About HTML</h2>
+        <p>HTML5 is used to structure content on the web.</p>
+
+        <h3>Text Formatting</h3>
+        <p><b>Bold Text</b></p>
+        <p><i>Italic Text</i></p>
+        <p><mark>Highlighted Text</mark></p>
+        <p>H<sub>2</sub>O and X<sup>2</sup></p>
+        <p><abbr title="Hypertext Markup Language">HTML</abbr></p>
+
+        <blockquote>
+            Learning never stops. Keep exploring new things!
+        </blockquote>
+
+        <p>Example of code: <code>print("Hello World")</code></p>
+
+        <pre>
+Welcome to HTML5
+Simple Web Design
+        </pre>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2>Available Courses</h2>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>
+
+        <h3>Learning Steps</h3>
+        <ol>
+            <li>Learn HTML</li>
+            <li>Learn CSS</li>
+            <li>Learn JavaScript</li>
+        </ol>
+
+        <h3>Course Details</h3>
+
+        <table>
+            <caption>Course Information</caption>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>HTML</td>
+                <td>2 Weeks</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>CSS</td>
+                <td>3 Weeks</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>JavaScript</td>
+                <td>4 Weeks</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: example@gmail.com</p>
+        <a href="#home">Go to Top</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 Simple Web Design. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
