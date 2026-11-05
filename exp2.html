@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Forms and Media</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+        }
+
+        header {
+            background-color: #234c75;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, select, textarea {
+            padding: 8px;
+            margin: 8px 0;
+            width: 90%;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        button {
+            background-color: #234c75;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        video, iframe {
+            max-width: 100%;
+        }
+
+        footer {
+            background-color: #234c75;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Student Registration Form</h1>
+        <p>HTML5 Forms and Media Elements</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Registration Form -->
+        <h2>Registration Form</h2>
+
+        <form action="#" method="get">
+
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <label>Full Name:</label><br>
+                <input type="text" name="name"
+                       placeholder="Enter your name" required><br>
+
+                <label>Email:</label><br>
+                <input type="email" name="email"
+                       placeholder="Enter your email" required><br>
+
+                <label>Password:</label><br>
+                <input type="password" name="password"
+                       placeholder="Enter password"><br>
+
+                <label>Date of Birth:</label><br>
+                <input type="date" name="dob"><br>
+
+                <label>Phone Number:</label><br>
+                <input type="tel" name="phone"
+                       placeholder="Enter phone number"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Details</legend>
+
+                <label>Gender:</label><br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+                <br><br>
+
+                <label>Select Your Course:</label><br>
+                <select name="course">
+                    <option value="">Select Course</option>
+                    <option value="cse">Computer Science</option>
+                    <option value="aiml">AI and ML</option>
+                    <option value="ece">Electronics</option>
+                </select>
+
+                <br><br>
+
+                <label>Skills:</label><br>
+                <input type="checkbox" name="skill" value="html"> HTML
+                <input type="checkbox" name="skill" value="css"> CSS
+                <input type="checkbox" name="skill" value="js"> JavaScript
+
+                <br><br>
+
+                <label>Address:</label><br>
+                <textarea name="address" rows="4"
+                          placeholder="Enter your address"></textarea>
+                <br>
+
+                <label>Upload File:</label><br>
+                <input type="file" name="file">
+                <br>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+
+        <!-- Progress Element -->
+        <h2>Course Progress</h2>
+        <progress value="70" max="100"></progress>
+        <p>70% Completed</p>
+
+        <!-- Audio Element -->
+        <h2>Audio Element</h2>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <!-- Video Element -->
+        <h2>Video Element</h2>
+        <video width="400" height="250" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+        <!-- Embed Element -->
+        <h2>Embed Element</h2>
+        <embed src="sample.pdf"
+               type="application/pdf"
+               width="400" height="300">
+
+        <!-- Iframe Element -->
+        <h2>Iframe Element</h2>
+        <iframe
+            src="https://www.wikipedia.org/"
+            width="400"
+            height="300"
+            title="Wikipedia">
+        </iframe>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 HTML5 Forms and Media Elements</p>
+    </footer>
+
+</body>
+</html>
