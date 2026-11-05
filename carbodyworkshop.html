@@ -1,0 +1,192 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Workshop</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: white;
+        }
+
+        .workshop {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #3984cc;
+        }
+
+        .car-area {
+            height: 220px;
+            position: relative;
+            margin: 30px auto;
+            background: #f7f7f7;
+            border: 1px solid #ddd;
+        }
+
+        .car {
+            position: relative;
+            width: 240px;
+            height: 130px;
+            margin: 35px auto;
+        }
+
+        .roof {
+            position: absolute;
+            top: 5px;
+            left: 65px;
+            width: 110px;
+            height: 50px;
+            background: #36ae5b;
+            clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+        }
+
+        .body {
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            width: 210px;
+            height: 45px;
+            background: #71e51c;
+            border-radius: 8px 12px 5px 5px;
+        }
+
+        .window {
+            position: absolute;
+            top: 14px;
+            left: 85px;
+            width: 70px;
+            height: 32px;
+            background: #a9e4f5;
+            z-index: 2;
+            clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+        }
+
+        .wheel {
+            position: absolute;
+            top: 82px;
+            width: 38px;
+            height: 38px;
+            background: #18224e;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .left-wheel {
+            left: 40px;
+        }
+
+        .right-wheel {
+            right: 40px;
+        }
+
+        button {
+            padding: 9px 12px;
+            margin: 5px;
+            background: white;
+            border: 1px solid #8da9d4;
+            color: #386bb0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #dcecff;
+        }
+    </style>
+</head>
+
+<body>
+<div class="workshop">
+
+    <h3>1. Car Workshop</h3>
+
+    <div class="car-area">
+
+        <div class="car">
+            <div class="roof"></div>
+            <div class="window"></div>
+            <div class="body"></div>
+            <div class="wheel left-wheel"></div>
+            <div class="wheel right-wheel"></div>
+        </div>
+
+    </div>
+
+    <button id="bodyColor">Change Body Color</button>
+    <button id="glassTint">Change Glass Tint</button>
+    <button id="increase">Tyre Size Increase</button>
+    <button id="decrease">Tyre Size Decrease</button>
+    <button id="reset">Reset</button>
+
+</div>
+
+<script>
+$(document).ready(function() {
+
+    let colors = ["red", "blue", "orange", "purple", "pink", "green"];
+    let tints = ["#a9e4f5", "#444444", "#9bd7a5", "#f4d35e"];
+
+    let colorIndex = 0;
+    let tintIndex = 0;
+    let tyreSize = 38;
+
+    $("#bodyColor").click(function() {
+        colorIndex = (colorIndex + 1) % colors.length;
+        $(".body, .roof").css("background-color", colors[colorIndex]);
+    });
+
+    $("#glassTint").click(function() {
+        tintIndex = (tintIndex + 1) % tints.length;
+        $(".window").css("background-color", tints[tintIndex]);
+    });
+
+    $("#increase").click(function() {
+        if (tyreSize < 65) {
+            tyreSize += 5;
+            $(".wheel").css({
+                width: tyreSize + "px",
+                height: tyreSize + "px"
+            });
+        }
+    });
+
+    $("#decrease").click(function() {
+        if (tyreSize > 20) {
+            tyreSize -= 5;
+            $(".wheel").css({
+                width: tyreSize + "px",
+                height: tyreSize + "px"
+            });
+        }
+    });
+
+    $("#reset").click(function() {
+        colorIndex = 0;
+        tintIndex = 0;
+        tyreSize = 38;
+
+        $(".body").css("background-color", "#71e51c");
+        $(".roof").css("background-color", "#36ae5b");
+        $(".window").css("background-color", "#a9e4f5");
+
+        $(".wheel").css({
+            width: "38px",
+            height: "38px"
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
+```

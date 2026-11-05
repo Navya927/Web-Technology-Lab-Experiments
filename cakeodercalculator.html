@@ -1,0 +1,195 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: white;
+        }
+
+        .shop {
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        h3 {
+            background: #b50000;
+            color: white;
+            padding: 10px;
+        }
+
+        .cakes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .cake {
+            padding: 10px 3px;
+            background: #f5f5f5;
+            font-size: 12px;
+        }
+
+        .cake .emoji {
+            font-size: 45px;
+        }
+
+        h2 {
+            color: #172c91;
+            font-size: 22px;
+        }
+
+        .orders {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #172c91;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 7px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 30px;
+            background: #0874df;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        hr {
+            border: 1px solid #7777cc;
+        }
+
+        .total {
+            background: green;
+            color: white;
+            padding: 8px;
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        #price {
+            color: #b50000;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        @media(max-width: 450px) {
+            .cakes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="shop">
+
+    <h3>CAKE SHOP</h3>
+
+    <div class="cakes">
+        <div class="cake">
+            <div class="emoji">🎂</div>
+            Color Cake - Rs.300
+        </div>
+
+        <div class="cake">
+            <div class="emoji">🍰</div>
+            Brown Cake - Rs.200
+        </div>
+
+        <div class="cake">
+            <div class="emoji">🎂</div>
+            Milky Cake - Rs.250
+        </div>
+
+        <div class="cake">
+            <div class="emoji">🍫</div>
+            Black Forest Cake - Rs.650
+        </div>
+    </div>
+
+    <h2>Order Cake</h2>
+
+    <div class="orders">
+
+        <label>Color Cake (Quantity)</label>
+        <input type="number" id="color" value="2" min="0">
+
+        <label>Brown Cake (Quantity)</label>
+        <input type="number" id="brown" value="1" min="0">
+
+        <label>Milky Cake (Quantity)</label>
+        <input type="number" id="milky" value="2" min="0">
+
+        <label>Black Forest Cake (Quantity)</label>
+        <input type="number" id="black" value="1" min="0">
+
+        <button id="order">Place Order</button>
+
+        <hr>
+
+        <h3 style="background:white;color:#172c91;">
+            Purchase Order Bill!!
+        </h3>
+
+        <div class="total">Total Price</div>
+        <h2 id="price">Rs.1650</h2>
+
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+
+    $("#order").click(function() {
+
+        let color = Number($("#color").val());
+        let brown = Number($("#brown").val());
+        let milky = Number($("#milky").val());
+        let black = Number($("#black").val());
+
+        let quantities = [color, brown, milky, black];
+
+        if (quantities.some(q => !Number.isInteger(q) || q < 0)) {
+            alert("Please enter valid non-negative quantities.");
+            return;
+        }
+
+        let total =
+            (color * 300) +
+            (brown * 200) +
+            (milky * 250) +
+            (black * 650);
+
+        $("#price").text("Rs." + total);
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+```
