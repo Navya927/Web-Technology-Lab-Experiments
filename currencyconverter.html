@@ -1,0 +1,113 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf4ff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 10px lightgray;
+        }
+
+        h1 {
+            color: #145da0;
+        }
+
+        input, select {
+            padding: 10px;
+            width: 90%;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #145da0;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 25px;
+            color: gray;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Currency Converter 💱</h1>
+
+        <input type="number" id="amount"
+               placeholder="Enter amount" min="0">
+
+        <select id="conversion">
+            <option value="INRtoUSD">INR to USD</option>
+            <option value="USDtoINR">USD to INR</option>
+        </select>
+
+        <br>
+
+        <button onclick="convertCurrency()">Convert</button>
+
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        Register Number: URK24CS9060 | BATCH 6
+    </footer>
+
+    <script>
+        function convertCurrency() {
+            let amount = parseFloat(
+                document.getElementById("amount").value
+            );
+
+            let conversion =
+                document.getElementById("conversion").value;
+
+            let result = document.getElementById("result");
+
+            if (isNaN(amount) || amount < 0) {
+                result.innerHTML = "Please enter a valid amount.";
+                return;
+            }
+
+            if (conversion === "INRtoUSD") {
+                let dollars = amount * 0.015;
+                result.innerHTML =
+                    "USD: $" + dollars.toFixed(2);
+            } else {
+                let rupees = amount * 67.12;
+                result.innerHTML =
+                    "INR: ₹" + rupees.toFixed(2);
+            }
+        }
+    </script>
+
+</body>
+</html>
+```

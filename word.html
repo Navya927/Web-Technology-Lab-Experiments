@@ -1,0 +1,104 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortest and Longest Word</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #result {
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Shortest and Longest Word</h1>
+
+        <p>Enter a sentence:</p>
+
+        <input type="text" id="sentence"
+               value="Web Development Tutorial">
+
+        <br>
+
+        <button onclick="findWords()">Find Words</button>
+
+        <p id="result"></p>
+
+        <footer>
+            Register Number: URK24CS9060<br>
+            BATCH 6
+        </footer>
+    </div>
+
+    <script>
+        function findWords() {
+            var sentence =
+                document.getElementById("sentence").value;
+
+            var words = sentence.trim().split(/\s+/);
+
+            var shortest = words[0];
+            var longest = words[0];
+
+            for (var i = 1; i < words.length; i++) {
+                if (words[i].length < shortest.length) {
+                    shortest = words[i];
+                }
+
+                if (words[i].length > longest.length) {
+                    longest = words[i];
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Shortest Word: " + shortest +
+                "<br>Longest Word: " + longest;
+        }
+    </script>
+
+</body>
+</html>
+```

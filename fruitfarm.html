@@ -1,0 +1,117 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Farm</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0fff0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        input {
+            padding: 8px;
+            width: 80px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #garden {
+            display: grid;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .fruit {
+            background-color: white;
+            border: 2px solid lightgreen;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 40px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🍎 Fruit Farm 🍊</h1>
+
+    <label>Number of Rows:</label>
+    <input type="number" id="rows" min="1" max="10" value="3">
+
+    <br>
+
+    <label>Number of Columns:</label>
+    <input type="number" id="cols" min="1" max="10" value="4">
+
+    <br><br>
+
+    <button onclick="createFarm()">Generate Fruit Farm</button>
+
+    <div id="garden"></div>
+
+    <footer>
+        Register Number: URK24CS9060 | BATCH 6
+    </footer>
+
+    <script>
+        function createFarm() {
+            let rows = parseInt(document.getElementById("rows").value);
+            let cols = parseInt(document.getElementById("cols").value);
+
+            let garden = document.getElementById("garden");
+            garden.innerHTML = "";
+
+            if (isNaN(rows) || isNaN(cols) ||
+                rows < 1 || cols < 1 ||
+                rows > 10 || cols > 10) {
+                alert("Enter rows and columns between 1 and 10.");
+                return;
+            }
+
+            garden.style.gridTemplateColumns =
+                "repeat(" + cols + ", 80px)";
+
+            for (let i = 0; i < rows * cols; i++) {
+                let fruit = document.createElement("div");
+                fruit.className = "fruit";
+
+                if (Math.random() < 0.5) {
+                    fruit.innerHTML = "🍎";
+                    fruit.title = "Apple";
+                } else {
+                    fruit.innerHTML = "🍊";
+                    fruit.title = "Orange";
+                }
+
+                garden.appendChild(fruit);
+            }
+        }
+
+        createFarm();
+    </script>
+
+</body>
+</html>
+```
