@@ -1,0 +1,84 @@
+```html
+<!DOCTYPE html>
+<html lang="en" ng-app="commentApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 550px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 12px 0;
+        }
+
+        .remove {
+            color: red;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body ng-controller="FrmController">
+
+    <h2>Post Your Comment</h2>
+
+    <textarea ng-model="txtcomment"
+              placeholder="Your Comment"></textarea>
+    <br>
+
+    <button ng-click="btn_add()">Post Comment</button>
+
+    <h3>Comments</h3>
+
+    <ul>
+        <li ng-repeat="comnt in comment track by $index">
+            {{ comnt }}
+            <a href="" class="remove"
+               ng-click="remItem($index)">Remove</a>
+        </li>
+    </ul>
+
+    <script>
+        angular.module("commentApp", [])
+        .controller("FrmController", function($scope) {
+
+            $scope.comment = [];
+
+            $scope.btn_add = function() {
+                if ($scope.txtcomment &&
+                    $scope.txtcomment.trim() !== "") {
+                    $scope.comment.push($scope.txtcomment);
+                    $scope.txtcomment = "";
+                }
+            };
+
+            $scope.remItem = function(index) {
+                $scope.comment.splice(index, 1);
+            };
+
+        });
+    </script>
+
+</body>
+</html>
+```
