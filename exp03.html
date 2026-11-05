@@ -1,0 +1,398 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navya Medmanoori - Responsive Webpage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            background-color: #eeeeee;
+            font-family: Georgia, serif;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 10px;
+            background-color: white;
+            border: 2px solid #555;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #8a22df;
+            color: white;
+            min-height: 100px;
+        }
+
+        .profile {
+            width: 110px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 26px;
+            font-weight: normal;
+            margin: 10px;
+        }
+
+        .social {
+            align-self: flex-start;
+            padding: 8px;
+            background: white;
+            color: #6540a8;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            background-color: #b4dfe0;
+            text-align: center;
+        }
+
+        nav a {
+            flex: 1;
+            padding: 12px 5px;
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+        }
+
+        nav a:link {
+            color: #222;
+        }
+
+        nav a:visited {
+            color: #6540a8;
+        }
+
+        nav a:hover {
+            background-color: #72c7c9;
+            color: black;
+        }
+
+        nav a:active {
+            background-color: #8a22df;
+            color: white;
+        }
+
+        /* Introduction */
+        .intro {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 190px;
+            padding: 12px;
+            background: linear-gradient(120deg, #078e91, #39b9bb);
+        }
+
+        .description {
+            width: 55%;
+            padding: 20px;
+            background-color: #c9e6e9;
+            border: 2px dotted #1598c3;
+            line-height: 1.6;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .people {
+            flex: 1;
+            text-align: center;
+            color: #075d65;
+            font-family: Arial, sans-serif;
+            font-size: 75px;
+        }
+
+        /* Technology cards */
+        .technologies {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 15px 5px;
+            background-color: #eeeeee;
+        }
+
+        .tech {
+            height: 125px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            border-bottom: 4px solid #e74665;
+        }
+
+        .tech strong {
+            font-size: 30px;
+        }
+
+        .tech span {
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: Georgia, serif;
+            font-size: 15px;
+        }
+
+        .html {
+            background-color: #e34c26;
+        }
+
+        .css {
+            background-color: #1572b6;
+        }
+
+        .js {
+            background-color: #174a78;
+        }
+
+        .php {
+            background-color: #777bb4;
+        }
+
+        /* Family section */
+        .family {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px 10px;
+            background: linear-gradient(135deg, #1686b4, #063d63);
+            color: white;
+            text-align: center;
+        }
+
+        .family-card {
+            padding: 8px;
+        }
+
+        .family-card img {
+            width: 135px;
+            height: 135px;
+            max-width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #111;
+        }
+
+        .family-card h3 {
+            color: #c9f37b;
+            font-size: 15px;
+        }
+
+        .family-card p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 12px;
+            padding: 15px;
+            background-color: #ffe1b9;
+            font-size: 13px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                padding: 5px;
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+
+            .profile {
+                width: 75px;
+                height: 80px;
+            }
+
+            .header-content h1 {
+                font-size: 18px;
+            }
+
+            nav a {
+                padding: 10px 2px;
+                font-size: 12px;
+            }
+
+            .intro {
+                flex-direction: column;
+            }
+
+            .description {
+                width: 100%;
+            }
+
+            .people {
+                font-size: 55px;
+            }
+
+            .technologies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .family {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <img
+            class="profile"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200"
+            alt="Profile picture">
+
+        <div class="header-content">
+            <h1>Navya Medmanoori</h1>
+        </div>
+
+        <div class="social">
+            f &nbsp; ♥ &nbsp; ◎
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#personal">Personal</a>
+        <a href="#academic">Academic</a>
+        <a href="#activity">Activity</a>
+        <a href="#others">Others</a>
+    </nav>
+
+    <!-- Introduction -->
+    <section class="intro" id="personal">
+
+        <div class="description">
+            Hello! I am Navya Medmanoori.
+            I am a passionate learner, always curious
+            about new things. I love exploring
+            technology, creativity and the journey
+            of self-growth.
+        </div>
+
+        <div class="people" aria-label="People illustration">
+            ♟ ♟ ♟
+        </div>
+
+    </section>
+
+    <!-- Technology section -->
+    <section class="technologies" id="academic">
+
+        <div class="tech html">
+            <strong>5</strong>
+            <span>HTML5</span>
+        </div>
+
+        <div class="tech css">
+            <strong>3</strong>
+            <span>CSS3</span>
+        </div>
+
+        <div class="tech js">
+            <strong>JS</strong>
+            <span>JavaScript</span>
+        </div>
+
+        <div class="tech php">
+            <strong>php</strong>
+            <span>PHP</span>
+        </div>
+
+    </section>
+
+    <!-- Family section -->
+    <section class="family" id="activity">
+
+        <div class="family-card">
+            <img
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=300"
+                alt="Father and child">
+
+            <h3>My Father's Name</h3>
+
+            <p>
+                My father has taught me to believe in myself,
+                value my dreams and always try to become
+                a better person.
+            </p>
+        </div>
+
+        <div class="family-card">
+            <img
+                src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=300"
+                alt="Mother and child">
+
+            <h3>My Mother's Name</h3>
+
+            <p>
+                My mother inspires me to be kind, stay strong
+                and believe that I have the power to
+                achieve my dreams.
+            </p>
+        </div>
+
+        <div class="family-card">
+            <img
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=300"
+                alt="Family">
+
+            <h3>My Sister / Brother</h3>
+
+            <p>
+                Siblings make life more memorable.
+                They are our friends, our support
+                and a special part of our lives.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="others">
+        Your Address<br>
+        © 2026. Navya Medmanoori - Web Technology Lab.
+        All Rights Reserved.
+    </footer>
+
+</div>
+
+</body>
+</html>
+```
