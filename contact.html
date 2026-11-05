@@ -1,0 +1,50 @@
+
+<div>
+
+    <h2>Contact Us</h2>
+
+    <p>Fill in the form below to contact us.</p>
+
+    <form name="contactForm"
+          ng-submit="sent=true"
+          novalidate>
+
+        <label>Name:</label>
+
+        <input type="text"
+               ng-model="contact.name"
+               placeholder="Enter your name"
+               required>
+
+        <label>Email:</label>
+
+        <input type="email"
+               ng-model="contact.email"
+               placeholder="Enter your email"
+               required>
+
+        <label>Message:</label>
+
+        <textarea ng-model="contact.message"
+                  placeholder="Enter your message"
+                  rows="5"
+                  required></textarea>
+
+        <button type="submit"
+                ng-disabled="contactForm.$invalid">
+            Send Message
+        </button>
+
+    </form>
+
+    <h3 ng-if="sent" style="color:green">
+        Message Sent Successfully!
+    </h3>
+
+    <h3>Contact Details</h3>
+
+    <p>Email: campusconnect@gmail.com</p>
+
+    <p>Phone: 9876543210</p>
+
+</div>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="campusApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CampusConnect</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .content {
+            width: 80%;
+            min-height: 400px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #cccccc;
+        }
+
+        h2, h3 {
+            color: #34495e;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #34495e;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: gray;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+
+    <script>
+        var app = angular.module("campusApp", ["ngRoute"]);
+
+        app.config(function($routeProvider) {
+
+            $routeProvider
+
+            .when("/", {
+                templateUrl: "home.html"
+            })
+
+            .when("/about", {
+                templateUrl: "about.html"
+            })
+
+            .when("/courses", {
+                templateUrl: "courses.html"
+            })
+
+            .when("/contact", {
+                templateUrl: "contact.html"
+            })
+
+            .otherwise({
+                redirectTo: "/"
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CampusConnect</h1>
+        <p>Your Future Starts Here!</p>
+    </header>
+
+    <nav>
+        <a href="#!/">Home</a>
+        <a href="#!/about">About</a>
+        <a href="#!/courses">Courses</a>
+        <a href="#!/contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <div ng-view></div>
+    </div>
+
+    <footer>
+        <p>Copyright 2026 CampusConnect</p>
+    </footer>
+
+</body>
+</html>
